@@ -163,3 +163,7 @@ model/
 wandb/
 
 .DS_Store
+
+# Weights
+.pth
+.ckpt
