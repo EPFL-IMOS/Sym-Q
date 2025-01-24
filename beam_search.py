@@ -178,7 +178,7 @@ if __name__ == "__main__":
     # Initialize model and optimizer
     device = torch.device(f"cuda:{args.gpu_id}" if torch.cuda.is_available() else "cpu")
     model = SymQ(cfg, device).to(device)
-    model.load_state_dict(torch.load(args.weights_path))
+    model.load_state_dict(torch.load(args.weights_path, map_location=device))
     model.eval()
     print(f"SymQ running on {device}")
 

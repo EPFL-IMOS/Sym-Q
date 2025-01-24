@@ -1,0 +1,84 @@
+max_step: 30
+num_vars: 3
+num_points: 100
+
+training:
+  seed: 0
+  batch_size: 512
+  epochs: 20
+  lr: 0.0001
+  use_scaler: False
+  use_mse: True             # MSE loss or CrossEntropy loss
+  gpus: 3                    # Number of GPUs
+  num_workers: 16            # DO NOT increase this while pusing DDP
+  no_cuda: False             # disables CUDA training
+  resume_path:               # model checkpoint
+  visible_devices: [0,1,2]   # Set here the visible GPUs
+
+logging:
+  log_interval: 5000 # how many batches to wait before logging training status
+  wandb: False
+  save_model: True
+
+loss:
+  ql: 100 # 100 for mse, 1 for crossentropy
+  cl: 0.5
+
+Dataset:
+  batch_size: 1000
+  num_train_skeletons: 10000000
+  num_val_skeletons: 1000
+  num_per_eq: 5
+  dataset_folder: ""   # Your Dataset Folder Path
+  constants:
+    num_constants: 3
+    additive:
+      max: 2
+      min: -2
+    multiplicative:
+      max: 2
+      min: -2
+
+SymQ:
+  embedding_fusion: "concat" # "concat" or "add"
+  set_skip_connection: False
+  dim_hidden: 256
+  batch_norm: True
+  use_transformer: False  # Use Transformer or GRU as the encoder
+  use_pretrain: True
+  pretrain_path: "weights/10M.ckpt"
+  freeze_encoder: True
+
+SetEncoder:
+  dim_hidden: 512
+  num_features: 10
+  ln: True
+  num_inds: 50
+  activation: "relu"
+  bit16: True
+  norm: True
+  linear: False
+  input_normalization: False
+  n_l_enc: 5
+  mean: 0.5  
+  std: 0.5 
+  num_heads: 8
+  dim_output: 512
+
+TreeEncoder:
+  dim_hidden: 512
+  num_heads: 8
+  num_layers: 5
+  dim_output: 512
+
+Inference:
+  weights_path: ""  # Your model checkpoint path
+  use_gpu: True
+  n_points: 300
+  n_jobs: -1
+  beam_size: 128
+  n_try: 20
+  timeout: 120
+  penalize_length: false
+  seed: 11
+  normalized: False

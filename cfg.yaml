@@ -1,4 +1,4 @@
-DEBUG: False
+DEBUG: True
 max_step: 30
 num_actions: 30
 num_points: 100
