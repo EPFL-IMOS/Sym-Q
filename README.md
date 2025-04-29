@@ -103,4 +103,4 @@ If you found our work useful and used code, please use the following citation:
 }
 ```
 ## Supplementary material
-[PDF](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-59288-y/MediaObjects/41467_2025_59288_MOESM1_ESM.pdf)
+[Supplementary material--Nature Communications](https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-025-59288-y/MediaObjects/41467_2025_59288_MOESM1_ESM.pdf)
