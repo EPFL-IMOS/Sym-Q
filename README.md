@@ -82,11 +82,15 @@ Our implementation is mainly refers to the following codebases. We gratefully th
 
 If you found our work useful and used code, please use the following citation:
 ```
-@article{tian2025co,
-  title={Interactive Symbolic Regression through Offline Reinforcement Learning: A Co-Design Framework},
+@article{tian2025interactive,
+  title={Interactive symbolic regression with co-design mechanism through offline reinforcement learning},
   author={Tian, Yuan and Zhou, Wenqi and Viscione, Michele and Dong, Hao and Kammer, David S and Fink, Olga},
-  journal={arXiv preprint arXiv:2502.02917},
-  year={2025}
+  journal={Nature Communications},
+  volume={16},
+  number={1},
+  pages={3930},
+  year={2025},
+  publisher={Nature Publishing Group UK London}
 }
 ```
 
